@@ -2,10 +2,10 @@ package com.example.projectmvvm
 
 import androidx.lifecycle.LiveData
 
-class QuotesRepository(val QuoteDao:QuoteDAO) {
+class QuotesRepository(private val QuoteDao:QuoteDAO) {
 
-    fun getQuotes(quotes: Quotes):LiveData<List<Quotes>>{
-        return QuoteDao.getQuotes(quotes) ;
+    fun getQuotes():LiveData<List<Quotes>>{
+        return QuoteDao.getQuotes() ;
     }
 
     suspend fun InsertQuotes(quotes: Quotes){

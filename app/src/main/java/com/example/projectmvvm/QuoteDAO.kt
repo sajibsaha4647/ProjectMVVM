@@ -9,12 +9,11 @@ import androidx.room.Query
 interface QuoteDAO {
 
     @Query("SELECT * FROM quote")
-    fun getQuotes(quotes: Quotes):LiveData<List<Quotes>>
+    fun getQuotes():LiveData<List<Quotes>>
 
     @Insert
-    suspend fun InsertQuotes(quotes: Quotes){
+    suspend fun InsertQuotes(quotes: Quotes)
 
-    }
 
 
 }
